@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>16</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -80,6 +81,11 @@
 <!--            <scope>compile</scope>-->
 <!--        </dependency>-->
 
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.5.2</version>
+		</dependency>
 
 	</dependencies>
 

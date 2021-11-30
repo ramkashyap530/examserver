@@ -25,7 +25,7 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
     private JwtAuthtenticationEntryPoint jwtAuthtenticationEntryPoint;
 
     @Autowired
-    private UserDetailsServiceImpl userDetailsServiceImpl;
+    private UserDetailsServiceImpl  userDetailsServiceImpl;
 
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -54,9 +54,9 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .cors().disable()
                 .authorizeRequests()
-                .antMatchers("/generate-token","/user").permitAll()
-                .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/generate-token","/user","/swagger-ui").permitAll()
+               // .antMatchers(HttpMethod.OPTIONS).permitAll()
+               // .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthtenticationEntryPoint)
                 .and()
